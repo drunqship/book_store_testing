@@ -10,77 +10,77 @@ driver.implicitly_wait(10)
 driver.get('https://practice.automationtesting.in/')
 
 # количество товаров в категории
-# driver.find_element_by_css_selector('#menu-item-50 a').click()
-# driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
-# driver.find_element_by_css_selector('#password').send_keys('IForgotThePassword')
-# driver.find_element_by_css_selector('.u-column1.col-1 input.woocommerce-Button.button').click()
-# driver.find_element_by_css_selector('#menu-item-40 a').click()
-# driver.find_element_by_css_selector('.cat-item-19 a').click()
-# time.sleep(3)
-# items_count = driver.find_elements_by_css_selector('ul li a img')
-# if len(items_count) == 3:
-#     print('В категории HTML 3 товара')
-# else:
-#     print('Ошибка. Количество товаров в категории HTML:', str(len(items_count)))
-# driver.quit()
+driver.find_element_by_css_selector('#menu-item-50 a').click()
+driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
+driver.find_element_by_css_selector('#password').send_keys('IForgotThePassword')
+driver.find_element_by_css_selector('.u-column1.col-1 input.woocommerce-Button.button').click()
+driver.find_element_by_css_selector('#menu-item-40 a').click()
+driver.find_element_by_css_selector('.cat-item-19 a').click()
+time.sleep(3)
+items_count = driver.find_elements_by_css_selector('ul li a img')
+if len(items_count) == 3:
+    print('В категории HTML 3 товара')
+else:
+    print('Ошибка. Количество товаров в категории HTML:', str(len(items_count)))
+driver.quit()
 
 # сортировка товаров
-# driver.find_element_by_css_selector('#menu-item-50 a').click()
-# driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
-# driver.find_element_by_css_selector('#password').send_keys('IForgotThePassword')
-# driver.find_element_by_css_selector('.u-column1.col-1 input.woocommerce-Button.button').click()
-# driver.find_element_by_css_selector('#menu-item-40 a').click()
-# assert driver.find_element_by_css_selector('select.orderby').get_attribute('value') == 'menu_order'
-# Select(driver.find_element_by_css_selector('.orderby')).select_by_value('price-desc')
-# assert driver.find_element_by_css_selector('select.orderby').get_attribute('value') == 'price-desc'
-# driver.quit()
+driver.find_element_by_css_selector('#menu-item-50 a').click()
+driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
+driver.find_element_by_css_selector('#password').send_keys('IForgotThePassword')
+driver.find_element_by_css_selector('.u-column1.col-1 input.woocommerce-Button.button').click()
+driver.find_element_by_css_selector('#menu-item-40 a').click()
+assert driver.find_element_by_css_selector('select.orderby').get_attribute('value') == 'menu_order'
+Select(driver.find_element_by_css_selector('.orderby')).select_by_value('price-desc')
+assert driver.find_element_by_css_selector('select.orderby').get_attribute('value') == 'price-desc'
+driver.quit()
 
 # отображение, скидка товара
-# driver.find_element_by_css_selector('#menu-item-50 a').click()
-# driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
-# driver.find_element_by_css_selector('#password').send_keys('IForgotThePassword')
-# driver.find_element_by_css_selector('.u-column1.col-1 input.woocommerce-Button.button').click()
-# driver.find_element_by_css_selector('#menu-item-40 a').click()
-# driver.find_element_by_css_selector('ul li:nth-child(1) a img').click()
-# assert driver.find_element_by_css_selector('.price del span.woocommerce-Price-amount').text == '₹600.00'
-# assert driver.find_element_by_css_selector('.price ins').text == '₹450.00'
-# wait = WebDriverWait(driver, 10)
-# wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, '.images img'))).click()
-# wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, '.pp_close'))).click()
-# driver.quit()
+driver.find_element_by_css_selector('#menu-item-50 a').click()
+driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
+driver.find_element_by_css_selector('#password').send_keys('IForgotThePassword')
+driver.find_element_by_css_selector('.u-column1.col-1 input.woocommerce-Button.button').click()
+driver.find_element_by_css_selector('#menu-item-40 a').click()
+driver.find_element_by_css_selector('ul li:nth-child(1) a img').click()
+assert driver.find_element_by_css_selector('.price del span.woocommerce-Price-amount').text == '₹600.00'
+assert driver.find_element_by_css_selector('.price ins').text == '₹450.00'
+wait = WebDriverWait(driver, 10)
+wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, '.images img'))).click()
+wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, '.pp_close'))).click()
+driver.quit()
 
 # проверка цены в корзине (на сайте доступна только одна книга, все тесты я провёл с одним товаром)
-# driver.find_element_by_css_selector('#menu-item-40 a').click()
-# driver.execute_script('window.scrollBy(0, 300);')
-# driver.find_element_by_css_selector('ul.products.masonry-done li:nth-child(6) a.button').click()
-# time.sleep(3)
-# assert driver.find_element_by_css_selector('.wpmenucart-contents .cartcontents').text == '1 Item'
-# assert driver.find_element_by_css_selector('.wpmenucart-contents .amount').text == '₹350.00'
-# driver.find_element_by_css_selector('.wpmenucart-contents').click()
-# wait = WebDriverWait(driver, 10)
-# wait.until(ec.text_to_be_present_in_element((By.CSS_SELECTOR, '.cart-subtotal'), '₹350.00'))
-# wait.until(ec.text_to_be_present_in_element((By.CSS_SELECTOR, '.order-total'), '₹357.00'))
-# driver.quit()
+driver.find_element_by_css_selector('#menu-item-40 a').click()
+driver.execute_script('window.scrollBy(0, 300);')
+driver.find_element_by_css_selector('ul.products.masonry-done li:nth-child(6) a.button').click()
+time.sleep(3)
+assert driver.find_element_by_css_selector('.wpmenucart-contents .cartcontents').text == '1 Item'
+assert driver.find_element_by_css_selector('.wpmenucart-contents .amount').text == '₹350.00'
+driver.find_element_by_css_selector('.wpmenucart-contents').click()
+wait = WebDriverWait(driver, 10)
+wait.until(ec.text_to_be_present_in_element((By.CSS_SELECTOR, '.cart-subtotal'), '₹350.00'))
+wait.until(ec.text_to_be_present_in_element((By.CSS_SELECTOR, '.order-total'), '₹357.00'))
+driver.quit()
 
 # работа в корзине (на сайте доступна только одна книга, все тесты я провёл с одним товаром)
-# driver.find_element_by_css_selector('#menu-item-40 a').click()
-# driver.execute_script('window.scrollBy(0, 300);')
-# time.sleep(1)
-# driver.find_element_by_css_selector('ul.products.masonry-done li:nth-child(6) a.button').click()
-# time.sleep(1)
-# driver.find_element_by_css_selector('.wpmenucart-contents').click()
-# time.sleep(3)
-# driver.find_element_by_css_selector('.product-remove a').click()
-# time.sleep(1)
-# driver.find_element_by_css_selector('.woocommerce-message a').click()
-# driver.find_element_by_css_selector('.quantity input').clear()
-# driver.find_element_by_css_selector('.quantity input').send_keys('3')
-# driver.find_element_by_css_selector('.actions .button:nth-child(2)').click()
-# assert driver.find_element_by_css_selector('.quantity input').get_attribute('value') == '3'
-# time.sleep(1)
-# driver.find_element_by_css_selector('.actions .coupon .button').click()
-# assert driver.find_element_by_css_selector('.woocommerce-error li').text == 'Please enter a coupon code.'
-# driver.quit()
+driver.find_element_by_css_selector('#menu-item-40 a').click()
+driver.execute_script('window.scrollBy(0, 300);')
+time.sleep(1)
+driver.find_element_by_css_selector('ul.products.masonry-done li:nth-child(6) a.button').click()
+time.sleep(1)
+driver.find_element_by_css_selector('.wpmenucart-contents').click()
+time.sleep(3)
+driver.find_element_by_css_selector('.product-remove a').click()
+time.sleep(1)
+driver.find_element_by_css_selector('.woocommerce-message a').click()
+driver.find_element_by_css_selector('.quantity input').clear()
+driver.find_element_by_css_selector('.quantity input').send_keys('3')
+driver.find_element_by_css_selector('.actions .button:nth-child(2)').click()
+assert driver.find_element_by_css_selector('.quantity input').get_attribute('value') == '3'
+time.sleep(1)
+driver.find_element_by_css_selector('.actions .coupon .button').click()
+assert driver.find_element_by_css_selector('.woocommerce-error li').text == 'Please enter a coupon code.'
+driver.quit()
 
 # покупка товара
 driver.find_element_by_css_selector('#menu-item-40 a').click()
