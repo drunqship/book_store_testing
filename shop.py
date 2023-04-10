@@ -9,6 +9,20 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 driver.get('https://practice.automationtesting.in/')
 
+# отображение страницы товара
+driver.find_element_by_css_selector('#menu-item-50 a').click()
+driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
+driver.find_element_by_css_selector('#password').send_keys('IForgotThePassword')
+driver.find_element_by_css_selector('.u-column1.col-1 input.woocommerce-Button.button').click()
+driver.find_element_by_css_selector('#menu-item-40 a').click()
+driver.find_element_by_css_selector('#content .products li:nth-child(3) a img').click()
+book_title = driver.find_element_by_css_selector('.summary .product_title').text
+if book_title == 'HTML5 Forms':
+    print('Название правильное')
+else:
+    print('Название неправильное')
+driver.quit()
+
 # количество товаров в категории
 driver.find_element_by_css_selector('#menu-item-50 a').click()
 driver.find_element_by_css_selector('#username').send_keys('joe_biden@whitehouse.com')
@@ -105,7 +119,7 @@ driver.find_element_by_css_selector('#select2-chosen-2').click()
 driver.find_element_by_css_selector('#s2id_autogen2_search').send_keys('District')
 driver.find_element_by_css_selector('div.select2-drop ul li').click()
 driver.find_element_by_css_selector('#billing_postcode').send_keys('20500')
-# driver.execute_script('window.scrollBy(0, 600);') # при добавлении прокуртки тест ломается, без неё всё работает нормально
+# driver.execute_script('window.scrollBy(0, 600);') # при добавлении прокрутки тест ломается, без неё всё работает нормально
 # time.sleep(1)
 driver.find_element_by_css_selector('.wc_payment_method.payment_method_cheque label').click()
 driver.find_element_by_css_selector('#place_order').click()
